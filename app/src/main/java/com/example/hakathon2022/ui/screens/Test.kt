@@ -1,4 +1,14 @@
 package com.example.hakathon2022.ui.screens
 
-class Test {
+import androidx.compose.material.Scaffold
+import androidx.compose.runtime.Composable
+
+@Composable
+fun Start(){
+
+    Scaffold(
+        content = {
+
+        }
+    )
 }
