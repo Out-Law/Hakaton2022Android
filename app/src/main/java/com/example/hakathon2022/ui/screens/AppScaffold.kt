@@ -1,18 +1,26 @@
 package com.example.hakathon2022.ui.screens
 
+import android.content.Context.LOCATION_SERVICE
+import android.location.Location
+import android.location.LocationListener
+import android.location.LocationManager
+import android.os.Bundle
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.hakathon2022.navigation.NavigationHost
 import com.example.hakathon2022.navigation.NavigationItem
+import com.google.android.gms.location.FusedLocationProviderClient
 
 
 @Composable
-fun AppScaffold(navController: NavController) {
+fun AppScaffold(navController: NavController, fusedLocationProviderClient: FusedLocationProviderClient) {
     val scaffoldState = rememberScaffoldState()
 
     Scaffold(
@@ -27,7 +35,6 @@ fun AppScaffold(navController: NavController) {
         NavigationHost(navController = navController)
 
     }
-
 }
 
 

@@ -5,10 +5,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.hakathon2022.ui.screens.Start
+import com.google.android.gms.location.FusedLocationProviderClient
 
 
 @Composable
-fun NavigationHost(navController: NavController) {
+fun NavigationHost(navController: NavController, fusedLocationProviderClient: FusedLocationProviderClient) {
     NavHost(
         navController = navController as NavHostController,
         startDestination = NavigationItem.Offline.route
