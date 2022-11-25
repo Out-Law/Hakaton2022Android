@@ -1,4 +1,4 @@
 package com.example.hakathon2022.ui.screens
 
-class Test {
+class TestScreen {
 }

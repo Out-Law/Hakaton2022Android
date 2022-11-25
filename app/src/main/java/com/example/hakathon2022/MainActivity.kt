@@ -10,11 +10,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.hakathon2022.ui.screens.AllTestsScreen
 import com.example.hakathon2022.ui.theme.Hakathon2022Theme
+import com.example.hakathon2022.viewModels.AllTestsViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             Hakathon2022Theme {
                 // A surface container using the 'background' color from the theme
@@ -22,22 +25,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    AllTestsScreen(AllTestsViewModel.shared)
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    Hakathon2022Theme {
-        Greeting("Android")
     }
 }

@@ -6,8 +6,8 @@ data class Test (
     val title: String,
     val subject: String,
     val questions: List<Question>,
-    val timer: Timer,
-
+    val timer: String,
+    val priority: Int
 )
 
 data class Question (
