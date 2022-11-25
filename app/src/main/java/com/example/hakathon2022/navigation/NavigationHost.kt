@@ -9,7 +9,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 
 
 @Composable
-fun NavigationHost(navController: NavController, fusedLocationProviderClient: FusedLocationProviderClient) {
+fun NavigationHost(navController: NavController) {
     NavHost(
         navController = navController as NavHostController,
         startDestination = NavigationItem.Offline.route

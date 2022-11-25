@@ -20,7 +20,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 
 
 @Composable
-fun AppScaffold(navController: NavController, fusedLocationProviderClient: FusedLocationProviderClient) {
+fun AppScaffold(navController: NavController) {
     val scaffoldState = rememberScaffoldState()
 
     Scaffold(
