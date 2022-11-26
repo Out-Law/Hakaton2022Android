@@ -11,8 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.hakathon2022.ui.screens.AllTestsScreen
-import com.example.hakathon2022.ui.screens.AppScaffold
+import com.example.hakathon2022.models.Lection
+import com.example.hakathon2022.models.Professor
+import com.example.hakathon2022.ui.screens.*
 import com.example.hakathon2022.ui.theme.Hakathon2022Theme
 import com.example.hakathon2022.viewModels.AllTestsViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -37,7 +38,10 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                    /* AllTestsScreen(AllTestsViewModel.shared)*/
-                    AppScaffold(navController = navBarNavController)
+                    //AppScaffold(navController = navBarNavController)
+                    //lectionScreenProfessor(lection = Lection(Professor(),"COS","KTbo4-7","15:20","Online"))
+                    //createLectionScreen()
+                    loginScreen()
                 }
             }
         }

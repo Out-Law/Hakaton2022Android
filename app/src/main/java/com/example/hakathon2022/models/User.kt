@@ -1,19 +1,15 @@
 package com.example.hakathon2022.models
 
-abstract class User {
-    abstract val name: String
-    abstract val surname: String
+open class User {
+    lateinit var name: String
+    lateinit var surname: String
 }
 
-data class Student(
-    override val name: String,
-    override val surname: String,
-    val group: String
-):User()
+class Student:User() {
+    lateinit var group: String
+}
 
-data class Professor(
-    override val name: String,
-    override val surname: String,
-    val tests: List<Test>,
-    val groups: List<String>
-):User()
+class Professor:User(){
+    lateinit var tests: List<Test>
+    lateinit var groups: List<String>
+}
