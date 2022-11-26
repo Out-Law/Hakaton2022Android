@@ -8,6 +8,7 @@ import com.example.hakathon2022.ui.theme.Material3ComposeTheme
 @Composable
 fun GpsScreen() {
     Material3ComposeTheme {
-        ActivityResultContracts.RequestPermission(permission = Manifest.permission.ACCESS_FINE_LOCATION)
+        /*Manifest.permission.ACCESS_FINE_LOCATION*/
+        ActivityResultContracts.RequestPermission()
     }
 }

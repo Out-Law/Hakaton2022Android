@@ -1,18 +1,15 @@
 package com.example.hakathon2022.ui.screens.Gps
 
-import androidx.compose.material.AlertDialog
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.semantics.Role.Companion.Button
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import com.google.accompanist.permissions.ExperimentalPermissionsApi
-import com.google.accompanist.permissions.PermissionState
-import com.google.accompanist.permissions.PermissionStatus
-
+import com.google.accompanist.permissions.*
 
 @ExperimentalPermissionsApi
 @Composable
@@ -31,12 +28,13 @@ fun RequestPermission(
             ) { permissionState.launchPermissionRequest() }
         },
         content = {
-            /*   Content(
-                   text = "PERMISSION GRANTED!",
+            Text(text = "PERMISSION GRANTED!",)
+               Content(
                    showButton = false
-               ) {}*/
+               ) {}
         }
     )
+    println(permissionState)
 }
 
 @ExperimentalPermissionsApi
@@ -51,7 +49,7 @@ fun HandleRequest(
             content()
         }
         is PermissionStatus.Denied -> {
-            deniedContent((permissionState.status as PermissionStatus.Denied).shouldShowRationale)
+            deniedContent(permissionState.status.shouldShowRationale)
         }
     }
 }

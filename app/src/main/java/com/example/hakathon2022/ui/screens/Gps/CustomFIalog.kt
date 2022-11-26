@@ -1,23 +1,39 @@
 package com.example.hakathon2022.ui.screens.Gps
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import java.lang.reflect.Modifier
+import androidx.compose.ui.window.Dialog
+import com.example.hakathon2022.R
+
+/*
+This example demonstrates how to make custom dialog in android jetpack compose in android.
+*  Button        : https://www.boltuix.com/2021/12/button_25.html
+*  Clip Modifier : https://www.boltuix.com/2021/12/clip-modifier_24.html
+*  Alert Dialog  : https://www.boltuix.com/2021/12/alert-dialog_25.html
+*  Column        : https://www.boltuix.com/2021/12/column-layout_25.html
+*  Box           : https://www.boltuix.com/2021/12/box-layout_25.html
+*  Type.kt       : https://www.boltuix.com/2021/12/typography_27.html
+*  Color.kt      : https://www.boltuix.com/2022/05/google-material-design-color.html
+*  Dialog        : https://www.boltuix.com/2022/07/compose-custom-animating-dialog.html
+* */
 
 @Composable
 fun CustomDialogLocation(
@@ -51,9 +67,9 @@ fun CustomDialogLocation(
                     painter = painterResource(id = R.drawable.permission_location),
                     contentDescription = null,
                     contentScale = ContentScale.Fit,
-                    /*  colorFilter  = ColorFilter.tint(
+                      colorFilter  = ColorFilter.tint(
                           color = MaterialTheme.colorScheme.primary
-                      ),*/
+                      ),
                     modifier = Modifier
                         .padding(top = 5.dp)
                         .height(320.dp)
@@ -130,7 +146,9 @@ fun CustomDialogLocation(
 
                 TextButton(onClick = {
                     enableLocation.value = false
-                }) { Text("Cancel", style = MaterialTheme.typography.labelLarge) }
+                }) {
+                    Text("Cancel", style = MaterialTheme.typography.labelLarge)
+                }
 
 
                 Spacer(modifier = Modifier.height(24.dp))
