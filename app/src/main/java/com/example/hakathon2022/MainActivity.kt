@@ -32,9 +32,10 @@ class MainActivity : ComponentActivity() {
                     loginScreen()
                 }
             }*/
-            Material3ComposeTheme {
+            /*Material3ComposeTheme {
                 RequestPermission(permission = Manifest.permission.ACCESS_FINE_LOCATION)
-            }
+            }*/
+            loginScreen()
         }
     }
 }
