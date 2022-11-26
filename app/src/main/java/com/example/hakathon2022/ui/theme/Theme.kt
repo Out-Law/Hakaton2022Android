@@ -58,3 +58,23 @@ fun QRCodeScannerTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Com
         content = content
     )
 }
+
+
+@Composable
+fun Material3ComposeTheme(
+    useDarkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable() () -> Unit
+) {
+    val colors = if (!useDarkTheme) {
+        LightColorPalette
+    } else {
+        DarkColorPalette
+    }
+
+    MaterialTheme(
+        colors = colors,
+        typography = Typography,
+        content = content,
+        shapes = Shapes,
+    )
+}

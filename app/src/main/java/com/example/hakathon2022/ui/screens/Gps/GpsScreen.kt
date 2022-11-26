@@ -1,13 +1,13 @@
 package com.example.hakathon2022.ui.screens.Gps
 
-import android.Manifest.permission.ACCESS_FINE_LOCATION
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
-import com.example.hakathon2022.Manifest
+import android.Manifest
+import com.example.hakathon2022.ui.theme.Material3ComposeTheme
 
 @Composable
 fun GpsScreen() {
-   /* Material3ComposeTheme {
+    Material3ComposeTheme {
         ActivityResultContracts.RequestPermission(permission = Manifest.permission.ACCESS_FINE_LOCATION)
-    }*/
+    }
 }

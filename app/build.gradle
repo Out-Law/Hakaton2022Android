@@ -74,4 +74,6 @@ dependencies {
 
     // zxing
     implementation 'com.google.zxing:core:3.3.3'
+
+    implementation 'com.google.accompanist:accompanist-permissions:0.26.5-rc'
 }
