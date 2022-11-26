@@ -3,7 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hakathon2022">
 
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="Manifest.permission.ACCESS_FINE_LOCATION}" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
