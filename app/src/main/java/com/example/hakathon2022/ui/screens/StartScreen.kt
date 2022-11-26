@@ -18,7 +18,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -40,9 +42,10 @@ fun startScreen() {
                 MaterialTheme.colors.darkBlue
             )
         )
+    ).fillMaxSize()
     )
-    )
-    Box(contentAlignment = Alignment.BottomCenter, modifier = Modifier.padding(top = 200.dp)
+    Box(
+        contentAlignment = Alignment.BottomCenter, modifier = Modifier.padding(top = 200.dp)
     ) {
         Image(
             painterResource(id = R.drawable.back),
@@ -50,7 +53,11 @@ fun startScreen() {
             modifier = Modifier.fillMaxSize()
         )
     }
-    Column (horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(top = 64.dp)) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier
+            .padding(top = 64.dp)
+            .fillMaxSize()
+    ) {
         Row {
             Image(
                 painterResource(id = R.drawable.sfedu),
@@ -89,8 +96,6 @@ fun startScreen() {
             })
 
     }
-
-
 }
 
 val Colors.salatGreen : Color

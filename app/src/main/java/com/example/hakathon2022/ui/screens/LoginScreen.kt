@@ -40,7 +40,7 @@ fun loginScreen() {
                 MaterialTheme.colors.darkBlue
             )
         )
-    )
+    ).fillMaxSize()
     )
     Box(contentAlignment = Alignment.BottomCenter, modifier = Modifier.padding(top = 200.dp)
     ) {
