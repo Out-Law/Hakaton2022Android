@@ -18,11 +18,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.res.ResourcesCompat
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.hakathon2022.R
 import com.example.hakathon2022.ui.common.CommonText
 import java.lang.Math.PI
@@ -30,19 +35,22 @@ import java.lang.Math.sqrt
 import kotlin.math.pow
 
 @Composable
-fun startScreen() {
-    Box(modifier = Modifier.background(
-        brush = Brush.verticalGradient(
-            colors = listOf(
-                MaterialTheme.colors.salatGreen,
-                MaterialTheme.colors.darkGreen,
-                MaterialTheme.colors.blue,
-                MaterialTheme.colors.darkBlue
+fun startScreen(navController: NavController) {
+    Box(modifier = Modifier
+        .background(
+            brush = Brush.verticalGradient(
+                colors = listOf(
+                    MaterialTheme.colors.salatGreen,
+                    MaterialTheme.colors.darkGreen,
+                    MaterialTheme.colors.blue,
+                    MaterialTheme.colors.darkBlue
+                )
             )
         )
+        .fillMaxSize()
     )
-    )
-    Box(contentAlignment = Alignment.BottomCenter, modifier = Modifier.padding(top = 200.dp)
+    Box(
+        contentAlignment = Alignment.BottomCenter, modifier = Modifier.padding(top = 200.dp)
     ) {
         Image(
             painterResource(id = R.drawable.back),
@@ -50,7 +58,11 @@ fun startScreen() {
             modifier = Modifier.fillMaxSize()
         )
     }
-    Column (horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(top = 64.dp)) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier
+            .padding(top = 64.dp)
+            .fillMaxSize()
+    ) {
         Row {
             Image(
                 painterResource(id = R.drawable.sfedu),
@@ -62,6 +74,8 @@ fun startScreen() {
                 "content"
             )
         }
+
+
         Button(modifier = Modifier
             .padding(top = 250.dp)
             .width(270.dp)
@@ -70,7 +84,7 @@ fun startScreen() {
                 backgroundColor = MaterialTheme.colors.salatGreen
             ),
             shape = RoundedCornerShape(10.dp),
-            onClick = {/*Начать тест у студентов группы*/ },
+            onClick = { navController.navigate("loginScreen")},
             content = {
                 CommonText(text = "Войти", color = Color.White, fontSize = 18.sp)
             })
@@ -89,8 +103,6 @@ fun startScreen() {
             })
 
     }
-
-
 }
 
 val Colors.salatGreen : Color

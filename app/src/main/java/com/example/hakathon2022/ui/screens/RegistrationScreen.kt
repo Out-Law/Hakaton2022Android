@@ -19,13 +19,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.hakathon2022.R
 import com.example.hakathon2022.ui.common.CommonText
 import com.example.hakathon2022.ui.common.SegmentedControl
 import com.example.hakathon2022.viewModels.AllTestsViewModel
 
 @Composable
-fun registrationScreen() {
+fun registrationScreen(navController: NavController) {
     var login = remember { mutableStateOf("") }
     var password = remember { mutableStateOf("") }
     val checkedState = remember { mutableStateOf(false) }
@@ -39,7 +40,7 @@ fun registrationScreen() {
                 MaterialTheme.colors.darkBlue
             )
         )
-    )
+    ).fillMaxSize()
     )
     Box(contentAlignment = Alignment.BottomCenter, modifier = Modifier.padding(top = 200.dp)
     ) {

@@ -7,18 +7,25 @@ import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
 import com.example.hakathon2022.ui.screens.*
 import android.Manifest
+import android.content.Context
+import androidx.compose.runtime.*
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import com.example.hakathon2022.ui.screens.Gps.RequestPermission
+import com.example.hakathon2022.ui.screens.QRcode.ScreenQR
 import com.example.hakathon2022.ui.theme.Material3ComposeTheme
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
 class MainActivity : ComponentActivity() {
 
-    @OptIn(ExperimentalPermissionsApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContent {
-            val navBarNavController = rememberNavController()
+            var navController = rememberNavController()
+            AppScaffold(navController)
+            }
             /*Hakathon2022Theme {
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -35,7 +42,8 @@ class MainActivity : ComponentActivity() {
             /*Material3ComposeTheme {
                 RequestPermission(permission = Manifest.permission.ACCESS_FINE_LOCATION)
             }*/
-            loginScreen()
+            //startScreen()
         }
     }
-}
+
+

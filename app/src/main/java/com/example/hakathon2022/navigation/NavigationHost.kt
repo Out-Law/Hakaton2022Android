@@ -4,24 +4,32 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.hakathon2022.ui.screens.Start
+import androidx.navigation.compose.rememberNavController
+import com.example.hakathon2022.ui.screens.*
 import com.google.android.gms.location.FusedLocationProviderClient
 
 
 @Composable
-fun NavigationHost(navController: NavController) {
+fun NavigationHost(navController:NavHostController = rememberNavController()) {
+
     NavHost(
-        navController = navController as NavHostController,
-        startDestination = NavigationItem.Offline.route
+        navController = navController,
+        startDestination = "startScreen"
     ) {
-        composable(NavigationItem.Offline.route) {
-            /*HomeScreen(NewsModel.shared, navController)*/
-            Start()
+        composable("startScreen") {
+            startScreen(navController)
         }
-        composable(NavigationItem.Online.route) {
-           /* UserModel.shared.getUserInfo()
-            ProfileScreen(NewsModel.shared, UserModel.shared)*/
-            Start()
+        composable("registrationScreen") {
+            registrationScreen(navController)
+        }
+        composable("loginScreen") {
+            loginScreen(navController)
+        }
+        composable("sheduleScreen") {
+            sheduleScreen(navController)
+        }
+        composable("lectionScreenStudent"){
+            lectionScreenStudent()
         }
     }
 }
