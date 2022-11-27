@@ -20,13 +20,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Button
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.hakathon2022.R
 import com.example.hakathon2022.ui.common.CommonText
 import com.example.hakathon2022.ui.common.SegmentedControl
 import com.example.hakathon2022.viewModels.AllTestsViewModel
 
 @Composable
-fun loginScreen() {
+fun loginScreen(navController: NavHostController) {
     var login = remember { mutableStateOf("")}
     var password = remember { mutableStateOf("")}
     val checkedState = remember { mutableStateOf(false)}
@@ -91,7 +93,10 @@ fun loginScreen() {
             ),
             shape = RoundedCornerShape(10.dp),
 
-            onClick = { AllTestsViewModel.shared.getToken() },
+            onClick = {
+                AllTestsViewModel.shared.getToken()
+                navController.navigate("sheduleScreen")
+            },
             content = {
                 CommonText(text = "Войти", color = Color.White, fontSize = 18.sp)
             })

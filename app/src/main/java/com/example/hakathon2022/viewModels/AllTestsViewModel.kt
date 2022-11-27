@@ -32,14 +32,15 @@ class AllTestsViewModel: ViewModel() {
     }
 
 
-    fun getToken() {
+    fun getToken(){
         CoroutineScope(Dispatchers.IO).launch {
 
-            val response = repository.getTokenJSON(LoginData(email = "aw@aw","1234","student"))
+            val response = repository.getTokenJSON(LoginData("aw@aw","1234","student"))
             withContext(Dispatchers.Main) {
 
                 if (response.isSuccessful) {
                     var token = response.body()!!
+                    token.token
                     Log.d("----content", token.token)
                 } else {
                     Log.e("----RORETROFIT_ERR", response.code().toString())

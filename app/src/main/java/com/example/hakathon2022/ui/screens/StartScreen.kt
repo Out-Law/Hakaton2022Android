@@ -25,6 +25,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.res.ResourcesCompat
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.hakathon2022.R
 import com.example.hakathon2022.ui.common.CommonText
 import java.lang.Math.PI
@@ -32,17 +35,19 @@ import java.lang.Math.sqrt
 import kotlin.math.pow
 
 @Composable
-fun startScreen() {
-    Box(modifier = Modifier.background(
-        brush = Brush.verticalGradient(
-            colors = listOf(
-                MaterialTheme.colors.salatGreen,
-                MaterialTheme.colors.darkGreen,
-                MaterialTheme.colors.blue,
-                MaterialTheme.colors.darkBlue
+fun startScreen(navController: NavController) {
+    Box(modifier = Modifier
+        .background(
+            brush = Brush.verticalGradient(
+                colors = listOf(
+                    MaterialTheme.colors.salatGreen,
+                    MaterialTheme.colors.darkGreen,
+                    MaterialTheme.colors.blue,
+                    MaterialTheme.colors.darkBlue
+                )
             )
         )
-    ).fillMaxSize()
+        .fillMaxSize()
     )
     Box(
         contentAlignment = Alignment.BottomCenter, modifier = Modifier.padding(top = 200.dp)
@@ -69,6 +74,8 @@ fun startScreen() {
                 "content"
             )
         }
+
+
         Button(modifier = Modifier
             .padding(top = 250.dp)
             .width(270.dp)
@@ -77,7 +84,7 @@ fun startScreen() {
                 backgroundColor = MaterialTheme.colors.salatGreen
             ),
             shape = RoundedCornerShape(10.dp),
-            onClick = {/*Начать тест у студентов группы*/ },
+            onClick = { navController.navigate("loginScreen")},
             content = {
                 CommonText(text = "Войти", color = Color.White, fontSize = 18.sp)
             })
