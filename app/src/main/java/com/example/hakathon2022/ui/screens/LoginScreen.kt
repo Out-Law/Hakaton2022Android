@@ -95,7 +95,8 @@ fun loginScreen(navController: NavHostController) {
 
             onClick = {
                 //AllTestsViewModel.shared.getToken()
-                navController.navigate("sheduleScreen")
+                //navController.navigate("sheduleScreen")
+                navController.navigate("ScreenQR")
             },
             content = {
                 CommonText(text = "Войти", color = Color.White, fontSize = 18.sp)

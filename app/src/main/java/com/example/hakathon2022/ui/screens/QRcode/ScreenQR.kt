@@ -25,10 +25,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavController
 import com.example.hakathon2022.ui.theme.QRCodeScannerTheme
 
 @Composable
-fun ScreenQR() {
+fun ScreenQR(navController: NavController) {
     QRCodeScannerTheme {
         Surface(modifier = Modifier.fillMaxSize(), color = Color.DarkGray) {
 

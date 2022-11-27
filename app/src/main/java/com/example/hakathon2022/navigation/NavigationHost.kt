@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.hakathon2022.ui.screens.*
+import com.example.hakathon2022.ui.screens.QRcode.ScreenQR
 import com.google.android.gms.location.FusedLocationProviderClient
 
 
@@ -33,6 +34,9 @@ fun NavigationHost(navController:NavHostController = rememberNavController()) {
         }
         composable("QRStudentScreen"){
             QRStudentScreen(navController)
+        }
+        composable("ScreenQR"){
+            ScreenQR(navController)
         }
     }
 }
