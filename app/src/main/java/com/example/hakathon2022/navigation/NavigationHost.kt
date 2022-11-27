@@ -29,7 +29,10 @@ fun NavigationHost(navController:NavHostController = rememberNavController()) {
             sheduleScreen(navController)
         }
         composable("lectionScreenStudent"){
-            lectionScreenStudent()
+            lectionScreenStudent(navController)
+        }
+        composable("QRStudentScreen"){
+            QRStudentScreen(navController)
         }
     }
 }

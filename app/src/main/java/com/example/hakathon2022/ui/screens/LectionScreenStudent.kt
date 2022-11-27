@@ -14,10 +14,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.hakathon2022.ui.common.CommonText
 
 @Composable
-fun lectionScreenStudent() {
+fun lectionScreenStudent(navController: NavController) {
     var answerOne = remember { mutableStateOf("") }
     var answerTwo = remember { mutableStateOf("") }
     Box(modifier = Modifier
@@ -91,7 +92,7 @@ fun lectionScreenStudent() {
                 backgroundColor = MaterialTheme.colors.salatGreen
             ),
             shape = RoundedCornerShape(10.dp),
-            onClick = {/*Начать тест у студентов группы*/ },
+            onClick = { navController.navigate("QRStudentScreen") },
             content = {
                 CommonText(text = "Сгенерировать QR", color = Color.Black, fontSize = 18.sp)
             })

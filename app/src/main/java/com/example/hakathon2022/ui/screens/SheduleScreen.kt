@@ -49,7 +49,7 @@ fun sheduleScreen(navController: NavController) {
                 backgroundColor = Color.White
             ),
             shape = RoundedCornerShape(10.dp),
-            onClick = {/*Начать тест у студентов группы*/ },
+            onClick = { navController.navigate("lectionScreenStudent") },
             content = {
                 CommonText(text = "Посетить лекцию", color = Color(0xFF403EFD), fontSize = 18.sp)
             })

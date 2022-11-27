@@ -94,7 +94,7 @@ fun loginScreen(navController: NavHostController) {
             shape = RoundedCornerShape(10.dp),
 
             onClick = {
-                AllTestsViewModel.shared.getToken()
+                //AllTestsViewModel.shared.getToken()
                 navController.navigate("sheduleScreen")
             },
             content = {
